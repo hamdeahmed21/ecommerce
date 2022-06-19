@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\Backend\AdminProfileController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\AdminProfileController;
+use App\Http\Controllers\Frontend\IndexController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +46,18 @@ Route::middleware(['auth:admin'])->group(function() {
     Route::post('/update/change/password', [AdminProfileController::class, 'AdminUpdateChangePassword'])->name('update.change.password');
 
 });  // end Middleware admin
+
+// User ALL Routes
+Route::middleware(['auth:sanctum,web', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+   Route::get('/', [IndexController::class, 'index']);
+   Route::get('/user/logout', [IndexController::class, 'UserLogout'])->name('user.logout');
+
+   Route::get('/user/profile', [IndexController::class, 'UserProfile'])->name('user.profile');
+
+    Route::post('/user/profile/store', [IndexController::class, 'UserProfileStore'])->name('user.profile.store');
+
+    Route::get('/user/change/password', [IndexController::class, 'UserChangePassword'])->name('change.password');
+
+   Route::post('/user/password/update', [IndexController::class, 'UserPasswordUpdate'])->name('user.password.update');
