@@ -39,7 +39,7 @@ class AdminController extends Controller
     }
 
     public function loginForm(){
-    	return view('auth.login', ['guard' => 'admin']);
+        return view('auth.admin_login', ['guard' => 'admin']);
     }
 
     /**
@@ -110,5 +110,6 @@ class AdminController extends Controller
 
         return app(LogoutResponse::class);
     }
+
 }
 
