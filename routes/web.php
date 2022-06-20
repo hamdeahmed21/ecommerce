@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Backend\BrandController;
+use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Frontend\IndexController;
 use Illuminate\Support\Facades\Route;
 
@@ -78,3 +79,18 @@ Route::prefix('brand')->group(function(){
     Route::get('/delete/{id}', [BrandController::class, 'BrandDelete'])->name('brand.delete');
 
 });
+// Admin Category all Routes
+Route::prefix('category')->group(function() {
+
+    Route::get('/view', [CategoryController::class, 'CategoryView'])->name('all.category');
+
+    Route::post('/store', [CategoryController::class, 'CategoryStore'])->name('category.store');
+
+    Route::get('/edit/{id}', [CategoryController::class, 'CategoryEdit'])->name('category.edit');
+
+    Route::post('/update/{id}', [CategoryController::class, 'CategoryUpdate'])->name('category.update');
+
+    Route::get('/delete/{id}', [CategoryController::class, 'CategoryDelete'])->name('category.delete');
+
+});
+
