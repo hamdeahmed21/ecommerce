@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Frontend\IndexController;
+use App\Http\Controllers\Frontend\LanguageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -169,3 +170,9 @@ Route::prefix('slider')->group(function(){
     Route::get('/active/{id}', [SliderController::class, 'SliderActive'])->name('slider.active');
 
 });
+//// Frontend All Routes /////
+/// Multi Language All Routes ////
+
+Route::get('/language/france', [LanguageController::class, 'france'])->name('france.language');
+
+Route::get('/language/english', [LanguageController::class, 'English'])->name('english.language');
