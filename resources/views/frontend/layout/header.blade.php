@@ -62,7 +62,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
                     <!-- ============================================================= LOGO ============================================================= -->
-                    <div class="logo"> <a href="home.html"> <img src="assets/images/logo.png" alt="logo"> </a> </div>
+                    <div class="logo"> <a href="{{route('Home')}}"> <img src="{{asset('frontend/assets/images/logo.png')}}" alt="logo"> </a> </div>
                     <!-- /.logo -->
                     <!-- ============================================================= LOGO : END ============================================================= --> </div>
                 <!-- /.logo-holder -->
@@ -183,7 +183,7 @@
 
                                                                 <a href="{{ url('subcategory/product/'.$subcategory->id.'/'.$subcategory->subcategory_slug_en ) }}">
                                                                     <h2 class="title">
-                                                                        @if(session()->get('language') == 'hindi') {{ $subcategory->subcategory_name_hin }} @else {{ $subcategory->subcategory_name_en }} @endif
+                                                                        @if(session()->get('language') == 'france') {{ $subcategory->subcategory_name_hin }} @else {{ $subcategory->subcategory_name_en }} @endif
                                                                     </h2> </a>
 
 
@@ -195,7 +195,7 @@
                                                                 @foreach($subsubcategories as $subsubcategory)
                                                                     <ul class="links">
                                                                         <li><a href="{{ url('subsubcategory/product/'.$subsubcategory->id.'/'.$subsubcategory->subsubcategory_slug_en ) }}">
-                                                                                @if(session()->get('language') == 'hindi') {{ $subsubcategory->subsubcategory_name_hin }} @else {{ $subsubcategory->subsubcategory_name_en }} @endif
+                                                                                @if(session()->get('language') == 'france') {{ $subsubcategory->subsubcategory_name_hin }} @else {{ $subsubcategory->subsubcategory_name_en }} @endif
                                                                             </a></li>
 
                                                                     </ul>
@@ -214,120 +214,7 @@
                                         </ul>
                                     </li>
                             @endforeach <!-- // End Category Foreach -->
-                                <li class="dropdown mega-menu">
-                                    <a href="category.html"  data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Electronics <span class="menu-label hot-menu hidden-xs">hot</span> </a>
-                                    <ul class="dropdown-menu container">
-                                        <li>
-                                            <div class="yamm-content">
-                                                <div class="row">
-                                                    <div class="col-xs-12 col-sm-12 col-md-2 col-menu">
-                                                        <h2 class="title">Laptops</h2>
-                                                        <ul class="links">
-                                                            <li><a href="#">Gaming</a></li>
-                                                            <li><a href="#">Laptop Skins</a></li>
-                                                            <li><a href="#">Apple</a></li>
-                                                            <li><a href="#">Dell</a></li>
-                                                            <li><a href="#">Lenovo</a></li>
-                                                            <li><a href="#">Microsoft</a></li>
-                                                            <li><a href="#">Asus</a></li>
-                                                            <li><a href="#">Adapters</a></li>
-                                                            <li><a href="#">Batteries</a></li>
-                                                            <li><a href="#">Cooling Pads</a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <!-- /.col -->
 
-                                                    <div class="col-xs-12 col-sm-12 col-md-2 col-menu">
-                                                        <h2 class="title">Desktops</h2>
-                                                        <ul class="links">
-                                                            <li><a href="#">Routers & Modems</a></li>
-                                                            <li><a href="#">CPUs, Processors</a></li>
-                                                            <li><a href="#">PC Gaming Store</a></li>
-                                                            <li><a href="#">Graphics Cards</a></li>
-                                                            <li><a href="#">Components</a></li>
-                                                            <li><a href="#">Webcam</a></li>
-                                                            <li><a href="#">Memory (RAM)</a></li>
-                                                            <li><a href="#">Motherboards</a></li>
-                                                            <li><a href="#">Keyboards</a></li>
-                                                            <li><a href="#">Headphones</a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <!-- /.col -->
-
-                                                    <div class="col-xs-12 col-sm-12 col-md-2 col-menu">
-                                                        <h2 class="title">Cameras</h2>
-                                                        <ul class="links">
-                                                            <li><a href="#">Accessories</a></li>
-                                                            <li><a href="#">Binoculars</a></li>
-                                                            <li><a href="#">Telescopes</a></li>
-                                                            <li><a href="#">Camcorders</a></li>
-                                                            <li><a href="#">Digital</a></li>
-                                                            <li><a href="#">Film Cameras</a></li>
-                                                            <li><a href="#">Flashes</a></li>
-                                                            <li><a href="#">Lenses</a></li>
-                                                            <li><a href="#">Surveillance</a></li>
-                                                            <li><a href="#">Tripods</a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <!-- /.col -->
-                                                    <div class="col-xs-12 col-sm-12 col-md-2 col-menu">
-                                                        <h2 class="title">Mobile Phones</h2>
-                                                        <ul class="links">
-                                                            <li><a href="#">Apple</a></li>
-                                                            <li><a href="#">Samsung</a></li>
-                                                            <li><a href="#">Lenovo</a></li>
-                                                            <li><a href="#">Motorola</a></li>
-                                                            <li><a href="#">LeEco</a></li>
-                                                            <li><a href="#">Asus</a></li>
-                                                            <li><a href="#">Acer</a></li>
-                                                            <li><a href="#">Accessories</a></li>
-                                                            <li><a href="#">Headphones</a></li>
-                                                            <li><a href="#">Memory Cards</a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-xs-12 col-sm-12 col-md-4 col-menu custom-banner"> <a href="#"><img alt="" src="assets/images/banners/banner-side.png"></a> </div>
-                                                </div>
-                                                <!-- /.row -->
-                                            </div>
-                                            <!-- /.yamm-content --> </li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown hidden-sm"> <a href="category.html">Health & Beauty <span class="menu-label new-menu hidden-xs">new</span> </a> </li>
-                                <li class="dropdown hidden-sm"> <a href="category.html">Watches</a> </li>
-                                <li class="dropdown"> <a href="contact.html">Jewellery</a> </li>
-                                <li class="dropdown"> <a href="contact.html">Shoes</a> </li>
-                                <li class="dropdown"> <a href="contact.html">Kids & Girls</a> </li>
-                                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Pages</a>
-                                    <ul class="dropdown-menu pages">
-                                        <li>
-                                            <div class="yamm-content">
-                                                <div class="row">
-                                                    <div class="col-xs-12 col-menu">
-                                                        <ul class="links">
-                                                            <li><a href="home.html">Home</a></li>
-                                                            <li><a href="category.html">Category</a></li>
-                                                            <li><a href="detail.html">Detail</a></li>
-                                                            <li><a href="shopping-cart.html">Shopping Cart Summary</a></li>
-                                                            <li><a href="checkout.html">Checkout</a></li>
-                                                            <li><a href="blog.html">Blog</a></li>
-                                                            <li><a href="blog-details.html">Blog Detail</a></li>
-                                                            <li><a href="contact.html">Contact</a></li>
-                                                            <li><a href="sign-in.html">Sign In</a></li>
-                                                            <li><a href="my-wishlist.html">Wishlist</a></li>
-                                                            <li><a href="terms-conditions.html">Terms and Condition</a></li>
-                                                            <li><a href="track-orders.html">Track Orders</a></li>
-                                                            <li><a href="product-comparison.html">Product-Comparison</a></li>
-                                                            <li><a href="faq.html">FAQ</a></li>
-                                                            <li><a href="404.html">404</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown  navbar-right special-menu"> <a href="#">Todays offer</a> </li>
-                            </ul>
                             <!-- /.navbar-nav -->
                             <div class="clearfix"></div>
                         </div>

@@ -66,7 +66,7 @@
 
 
                                     <div class="form-group">
-                                        <h5>SubCategory Hindi  <span class="text-danger">*</span></h5>
+                                        <h5>SubCategory France  <span class="text-danger">*</span></h5>
                                         <div class="controls">
                                             <input type="text" name="subcategory_name_fr" class="form-control" value="{{ $subcategory->subcategory_name_fr }}" >
                                             @error('subcategory_name_fr')

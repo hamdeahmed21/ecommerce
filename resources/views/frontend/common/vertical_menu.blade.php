@@ -57,25 +57,6 @@
                 <!-- /.menu-item -->
         @endforeach  <!-- End Category Foreach -->
 
-
-
-
-
-
-            <li class="dropdown menu-item"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon fa fa-paper-plane"></i>Kids and Babies</a>
-                <!-- /.dropdown-menu --> </li>
-            <!-- /.menu-item -->
-
-            <li class="dropdown menu-item"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon fa fa-futbol-o"></i>Sports</a>
-                <!-- ================================== MEGAMENU VERTICAL ================================== -->
-                <!-- /.dropdown-menu -->
-                <!-- ================================== MEGAMENU VERTICAL ================================== --> </li>
-            <!-- /.menu-item -->
-
-            <li class="dropdown menu-item"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon fa fa-envira"></i>Home and Garden</a>
-                <!-- /.dropdown-menu --> </li>
-            <!-- /.menu-item -->
-
         </ul>
         <!-- /.nav -->
     </nav>

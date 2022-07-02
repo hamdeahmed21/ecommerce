@@ -113,7 +113,7 @@ class IndexController extends Controller
         $size_en = $product->product_size_en;
         $product_size_en = explode(',', $size_en);
 
-        $size_fr = $product->product_size_hin;
+        $size_fr = $product->product_size_fr;
         $product_size_fr = explode(',', $size_fr);
 
         $multiImag = MultiImg::where('product_id',$id)->get();
@@ -124,7 +124,7 @@ class IndexController extends Controller
 
     }
     public function TagWiseProduct($tag){
-        $products = Product::where('status',1)->where('product_tags_en',$tag)->where('product_tags_hin',$tag)->orderBy('id','DESC')->paginate(3);
+        $products = Product::where('status',1)->where('product_tags_en',$tag)->where('product_tags_fr',$tag)->orderBy('id','DESC')->paginate(3);
         $categories = Category::orderBy('category_name_en','ASC')->get();
         return view('frontend.tags.tags_view',compact('products','categories'));
 

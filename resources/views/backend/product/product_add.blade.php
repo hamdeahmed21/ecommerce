@@ -81,7 +81,9 @@
                                                     <div class="controls">
                                                         <select name="subcategory_id" class="form-control" required="" >
                                                             <option value="" selected="" disabled="">Select SubCategory</option>
-
+                                                            @foreach($SubCategorys as $SubCategory)
+                                                                <option value="{{ $SubCategory->id }}">{{ $SubCategory->subcategory_name_en }}</option>
+                                                            @endforeach
                                                         </select>
                                                         @error('subcategory_id')
                                                         <span class="text-danger">{{ $message }}</span>
@@ -103,7 +105,9 @@
                                                     <div class="controls">
                                                         <select name="subsubcategory_id" class="form-control" required="" >
                                                             <option value="" selected="" disabled="">Select SubSubCategory</option>
-
+                                                            @foreach($SubSubCategorys as $SubSubCategory)
+                                                                <option value="{{ $SubSubCategory->id }}">{{ $SubSubCategory->subsubcategory_name_en }}</option>
+                                                            @endforeach
                                                         </select>
                                                         @error('subsubcategory_id')
                                                         <span class="text-danger">{{ $message }}</span>
@@ -451,25 +455,6 @@
                                             </div>
                                         </div>
 
-
-
-                                        <div class="col-md-6">
-
-                                            <div class="form-group">
-                                                <h5>Digital Product <span class="text-danger">pdf,xlx,csv*</span></h5>
-                                                <div class="controls">
-                                                    <input type="file" name="file" class="form-control" >
-
-                                                </div>
-                                            </div>
-
-
-                                        </div> <!-- end col md 4 -->
-
-
-
-
-
                                         <div class="text-xs-right">
                                             <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add Product">
                                         </div>
@@ -487,54 +472,6 @@
         </section>
         <!-- /.content -->
     </div>
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('select[name="category_id"]').on('change', function(){
-                var category_id = $(this).val();
-                if(category_id) {
-                    $.ajax({
-                        url: "{{  url('/category/subcategory/ajax') }}/"+category_id,
-                        type:"GET",
-                        dataType:"json",
-                        success:function(data) {
-                            $('select[name="subsubcategory_id"]').html('');
-                            var d =$('select[name="subcategory_id"]').empty();
-                            $.each(data, function(key, value){
-                                $('select[name="subcategory_id"]').append('<option value="'+ value.id +'">' + value.subcategory_name_en + '</option>');
-                            });
-                        },
-                    });
-                } else {
-                    alert('danger');
-                }
-            });
-
-
-
-            $('select[name="subcategory_id"]').on('change', function(){
-                var subcategory_id = $(this).val();
-                if(subcategory_id) {
-                    $.ajax({
-                        url: "{{  url('/category/sub-subcategory/ajax') }}/"+subcategory_id,
-                        type:"GET",
-                        dataType:"json",
-                        success:function(data) {
-                            var d =$('select[name="subsubcategory_id"]').empty();
-                            $.each(data, function(key, value){
-                                $('select[name="subsubcategory_id"]').append('<option value="'+ value.id +'">' + value.subsubcategory_name_en + '</option>');
-                            });
-                        },
-                    });
-                } else {
-                    alert('danger');
-                }
-            });
-
-
-        });
-    </script>
-
 
     <script type="text/javascript">
         function mainThamUrl(input){
