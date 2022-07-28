@@ -173,22 +173,21 @@
                 </ul>
             </li>
 
-            <li class="treeview">
+            <li class="treeview {{ ($prefix == '/blog')?'active':'' }}  ">
                 <a href="#">
-                    <i data-feather="inbox"></i>
-                    <span>Forms</span>
+                    <i data-feather="file"></i>
+                    <span>Manage Blog</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="forms_advanced.html"><i class="ti-more"></i>Advanced Elements</a></li>
-                    <li><a href="forms_editors.html"><i class="ti-more"></i>Editors</a></li>
-                    <li><a href="forms_code_editor.html"><i class="ti-more"></i>Code Editor</a></li>
-                    <li><a href="forms_validation.html"><i class="ti-more"></i>Form Validation</a></li>
-                    <li><a href="forms_wizard.html"><i class="ti-more"></i>Form Wizard</a></li>
-                    <li><a href="forms_general.html"><i class="ti-more"></i>General Elements</a></li>
-                    <li><a href="forms_dropzone.html"><i class="ti-more"></i>Dropzone</a></li>
+                    <li class="{{ ($route == 'blog.category')? 'active':'' }}"><a href="{{ route('blog.category') }}"><i class="ti-more"></i>Blog Category</a></li>
+
+                    <li class="{{ ($route == 'list.post')? 'active':'' }}"><a href="{{ route('list.post') }}"><i class="ti-more"></i>List Blog Post</a></li>
+
+                    <li class="{{ ($route == 'add.post')? 'active':'' }}"><a href="{{ route('add.post') }}"><i class="ti-more"></i>Add Blog Post</a></li>
+
                 </ul>
             </li>
             <li class="treeview">
